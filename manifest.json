@@ -1,7 +1,9 @@
 {
-  "name": "daemon-responder",
+  "name": "@ubiquity-os/daemon-responder",
+  "short_name": "gentlementlegen/daemon-responder@codex/fix/manifest-build",
   "description": "Issue automated responses on a per-repository level.",
-  "ubiquity:listeners": ["issue_comment.created"],
+  "ubiquity:listeners": ["issue_comment.created", "pull_request_review_comment.created"],
+  "skipBotEvents": true,
   "configuration": {
     "default": {},
     "type": "object",
