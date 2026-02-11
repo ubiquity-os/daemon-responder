@@ -11,12 +11,12 @@ jobs:
     permissions: write-all
 
     steps:
-      - uses: Meniole/action-deploy-plugin@feat/27-generate-manifest-metadata
+      - uses: ubiquity-os/action-deploy-plugin@main
         with:
           treatAsEsm: true
           sourcemap: false
           pluginEntry: "${{ github.workspace }}/src/action.ts"
-          excludeSupportedEvents: "issue_comment.created"
+          excludeSupportedEvents: "issue_comment.created,pull_request_review_comment.created"
         env:
           APP_ID: ${{ secrets.APP_ID }}
           APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
