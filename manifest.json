@@ -1,8 +1,8 @@
 {
-  "name": "plugin-template",
+  "name": "@ubiquity-os/daemon-responder",
   "short_name": "gentlementlegen/daemon-responder@codex/fix/manifest-build",
-  "description": "Ubiquibot plugin template repository with TypeScript support.",
-  "ubiquity:listeners": ["pull_request_review_comment.created"],
+  "description": "Issue automated responses on a per-repository level.",
+  "ubiquity:listeners": [],
   "skipBotEvents": true,
   "configuration": {
     "default": {},
