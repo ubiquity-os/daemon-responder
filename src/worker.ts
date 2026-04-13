@@ -9,7 +9,11 @@ import { Env, envSchema, PluginSettings, pluginSettingsSchema, SupportedEvents }
 
 export default {
   async fetch(request: Request, serverInfo: Record<string, unknown>, executionCtx?: ExecutionContext) {
-    const environment = env<Env>(request as never);
+    const environment = env<Env>(request as never) as Env & {
+      KERNEL_PUBLIC_KEY?: string;
+      LOG_LEVEL?: string;
+      NODE_ENV?: string;
+    };
     return createPlugin<PluginSettings, Env, null, SupportedEvents>(
       (context) => {
         return runPlugin(context);
